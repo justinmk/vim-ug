@@ -13,7 +13,7 @@ See help file for details.
 ## Install
 
 ```vim
-Plug 'https://github.com/justinmk/vim-ug'
+vim.pack.add{ 'https://github.com/justinmk/vim-ug' }
 ```
 
 Requirements:
