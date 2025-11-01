@@ -5,15 +5,15 @@ and a few other QoL tweaks.
 
 ## Usage
 
-All of the `U…` mappings have aliases for uppercase and lowercase, to avoid
-worrying about typos. For example `Ux` is aliased to `UX`.
-
 See `:help ug-mappings` for the full list. Examples:
 
 - Show the Git status with `Us`.
 - Show the blame with `Ub`.
 - Jump to the next change with `<c-n>`, or previous with `<c-p>`.
 - Show Git branch with `<c-g>`.
+
+All `U…` mappings have uppercase aliases (`Ux` is aliased to `UX`, etc.), to
+avoid worrying about typos.
 
 ## Install
 
