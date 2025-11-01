@@ -1,7 +1,7 @@
 *vim-ug.txt*
 
 ==============================================================================
-vim-ug                                                              *vim-ug*
+vim-ug                                                                *vim-ug*
 
 Git wrapper rapper.
 
@@ -10,9 +10,9 @@ Besides mappings, this plugin also:
 - always calls FugitiveDetect() so that fugitive "works" in all buffers.
 
 ==============================================================================
-MAPPINGS                                                    *ug-mappings*
+MAPPINGS                                                         *ug-mappings*
 
-<C-G>           Show branch info.
+<c-g>           Show branch info.
 <c-p>           :diffput the selected line
 <c-o>           :diffget the selected line
 <C-n>           Jump to next change.
@@ -31,6 +31,7 @@ Ue              `:Gedit<cr>`
 Uf              Start a `:G commit --fixup=` command.
 
 Ul              Show logs (Git history) for this file.
+9Ul             Show logs (Git history) for the current repo.
 {visual}Ul      Show logs (Git history) for the selected range.
 1Ul             Show the most-recent commit for this file.
 

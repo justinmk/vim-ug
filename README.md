@@ -1,13 +1,17 @@
-# vim-ug: a Git wrapper rapper
+# Ug, the git wrapper-rapper
 
 Ug provides mappings (prefixed with `U`) for [vim-fugitive](https://github.com/tpope/vim-fugitive),
 and a few other QoL tweaks.
 
 ## Usage
 
-Use the standard fugitive commands with enhanced mappings.
+All of the `U…` mappings have aliases for uppercase and lowercase, to avoid
+worrying about typos. For example `Ux` is aliased to `UX`.
 
-See help file for details.
+- Show the Git status with `Us`.
+- Show the blame with `Ub`.
+- Jump to the next change with `<c-n>`, or previous with `<c-p>`.
+- Show Git branch with `<c-g>`.
 
 ## Install
 
