@@ -1,0 +1,49 @@
+*vim-ug.txt*
+
+==============================================================================
+vim-ug                                                              *vim-ug*
+
+Git wrapper rapper.
+
+Besides mappings, this plugin also:
+
+- always calls FugitiveDetect() so that fugitive "works" in all buffers.
+
+==============================================================================
+MAPPINGS                                                    *ug-mappings*
+
+<C-G>           Show branch info.
+<c-p>           :diffput the selected line
+<c-o>           :diffget the selected line
+<C-n>           Jump to next change.
+<C-p>           Jump to previous change.
+
+Ub              Blame
+1Ub             Blame this line
+{visual}Ub      Blame the selected range.
+Un              (gitsigns.nvim) Blame this line
+
+Uc              Commit using the current file's most-recent commit-message.
+Ud              Diff this buffer
+[count]Ud       Diff this buffer with [count] commits earlier.
+
+Ue              `:Gedit<cr>`
+Uf              Start a `:G commit --fixup=` command.
+
+Ul              Show logs (Git history) for this file.
+{visual}Ul      Show logs (Git history) for the selected range.
+1Ul             Show the most-recent commit for this file.
+
+U:              Start a `:G log …` command.
+Um              Show the logs (Git history) for this Method/Function.
+Ur              Read the index version into the buffer.
+[count]Ur       Read the version [count] commits ago into the buffer.
+Us              Show Git status.
+Uu              ??
+Uw              `:Gwrite!<cr>`
+Ux              `:GBrowse`
+{visual}Ux      `:GBrowse` the selected range.
+U.              ??
+
+------------------------------------------------------------------------------
+vim:tw=78:ts=8:sw=4:et:ft=help:norl:

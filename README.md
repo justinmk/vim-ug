@@ -1,8 +1,7 @@
-# vim-ug
+# vim-ug: a Git wrapper rapper
 
-> Minimal wrapper around the world's best git wrapper.
-
-Convenient mappings for [vim-fugitive](https://github.com/tpope/vim-fugitive).
+Ug provides mappings (prefixed with `U`) for [vim-fugitive](https://github.com/tpope/vim-fugitive),
+and a few other QoL tweaks.
 
 ## Usage
 
@@ -12,19 +11,24 @@ See help file for details.
 
 ## Install
 
-```vim
-vim.pack.add{ 'https://github.com/justinmk/vim-ug' }
-```
+Requires Nvim 0.12. Partial support for Vim and older Nvim.
 
-Requirements:
-- [vim-fugitive](https://github.com/tpope/vim-fugitive)
+```lua
+vim.pack.add{
+  'https://github.com/tpope/vim-fugitive',
+  'https://github.com/justinmk/vim-ug',
+}
+```
 
 ## How it works
 
 1. Provides convenient keymaps for common fugitive operations.
 2. Wraps fugitive commands with minimal, opinionated defaults.
 
+## Todo
+
+- make `<c-g>` mapping compatible with Vim
+
 ## Credits
 
-vim-ug is a minimal wrapper around
-[vim-fugitive](https://github.com/tpope/vim-fugitive) by Tim Pope.
+Ug is a minimal wrapper around [vim-fugitive](https://github.com/tpope/vim-fugitive) by Tim Pope.
