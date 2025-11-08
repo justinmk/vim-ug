@@ -1,4 +1,6 @@
-local function ctrl_g()
+local M = {}
+
+function M.ctrl_g()
   local msg = {}
   local fn = vim.fn
   local isfile = 0 == fn.empty(fn.expand('%:p'))
@@ -26,5 +28,4 @@ local function ctrl_g()
   vim.api.nvim_echo(msg, false, {})
 end
 
-vim.keymap.set('n', '<c-g>', ctrl_g)
-
+return M
