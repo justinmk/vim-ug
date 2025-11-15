@@ -45,7 +45,7 @@ nnoremap <expr>   Ud  &diff ? ':diffupdate<cr>'
                   \   : '<Cmd>update<bar>if !'..v:count..' && [""] == FugitiveExecute(["diff", "--", FugitivePath()]).stdout<bar>echo "no changes"'
                   \     ..'<bar>else<bar>Gvdiffsplit '..(v:count ? ' HEAD'.repeat('^', v:count) : '')..'<bar>endif<cr>'
 nnoremap <silent> Ue  :Gedit<cr>
-nnoremap          Uf  :G show <c-r>=FugitiveExecute(['log', '-1', '--format=%h', '--', FugitivePath()]).stdout[0]<cr><cr><c-w><c-w>:G commit --fixup=<c-r>=FugitiveExecute(['log', '-1', '--format=%h', '--', FugitivePath()]).stdout[0]<cr>
+nnoremap          Uf  :G commit --fixup=<c-r>=FugitiveExecute(['log', '-1', '--format=%h', '--', FugitivePath()]).stdout[0]<cr>
 
 " Log:
 nnoremap <expr>   Ul  '@_<cmd>G log --pretty="%h%d %s  %aN (%cr)" --date=relative'.(v:count?'':' --follow -- %').'<cr>'
