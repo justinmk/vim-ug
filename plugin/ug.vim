@@ -42,9 +42,8 @@ nnoremap          Un  <cmd>Gitsigns blame_line<cr>
 " Commit using the current file's most-recent commit-message.
 nnoremap <expr>   Uc  '@_:G commit '..(v:count ? '--no-verify' : '')..' --edit -m '..shellescape(FugitiveExecute(['log', '-1', '--format=%s', '--', FugitivePath()]).stdout[0])..'<cr>'
 nnoremap <expr>   Ud  &diff ? ':diffupdate<cr>'
-                \     : (!v:count && [''] == FugitiveExecute(['diff', '--', FugitivePath()]).stdout
-                \        ? '<Cmd>echo "no changes"<cr>'
-                \        : '<Cmd>Gvdiffsplit '..(v:count ? ' HEAD'.repeat('^', v:count) : '')..'<cr>')
+                  \   : '<Cmd>update<bar>if !'..v:count..' && [""] == FugitiveExecute(["diff", "--", FugitivePath()]).stdout<bar>echo "no changes"'
+                  \     ..'<bar>else<bar>Gvdiffsplit '..(v:count ? ' HEAD'.repeat('^', v:count) : '')..'<bar>endif<cr>'
 nnoremap <silent> Ue  :Gedit<cr>
 nnoremap          Uf  :G show <c-r>=FugitiveExecute(['log', '-1', '--format=%h', '--', FugitivePath()]).stdout[0]<cr><cr><c-w><c-w>:G commit --fixup=<c-r>=FugitiveExecute(['log', '-1', '--format=%h', '--', FugitivePath()]).stdout[0]<cr>
 
@@ -58,7 +57,7 @@ nnoremap          Um  :G log --pretty="%h%d %s  %aN (%cr)" --date=relative -L :<
 nnoremap <expr>   Ur  '@_<cmd>Gread'.(v:count?(' @'.repeat('^',v:count).':%'):'').'<cr>'
 nnoremap <silent> Us  :G<cr>
 nnoremap <silent> Uu  :Gedit <C-R><C-A><cr>
-nnoremap <silent> Uw  :call <sid>fug_detect()<bar>Gwrite!<cr>
+nnoremap <silent> Uw  :call <sid>fug_detect()<bar>Gwrite<cr>
 nnoremap          Ux  :<c-u>try<bar>.GBrowse<bar>catch<bar>call feedkeys(':.GBrowse @')<bar>endtry<cr>
 xnoremap          Ux  :<c-u>try<bar>'<,'>GBrowse<bar>catch<bar>call feedkeys('gv:GBrowse @')<bar>endtry<cr>
 nnoremap          U.  :G  <c-r><c-w><bar>G s<home><right><right>
