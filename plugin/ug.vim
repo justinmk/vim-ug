@@ -29,9 +29,6 @@ endfunc
 nmap <expr> <C-n> &diff?']c]n':(luaeval('({pcall(require, "gitsigns")})[1]')?'<cmd>lua require("gitsigns").next_hunk({wrap=false})<cr>':']n')
 nmap <expr> <C-p> &diff?'[c[n':(luaeval('({pcall(require, "gitsigns")})[1]')?'<cmd>lua require("gitsigns").prev_hunk({wrap=false})<cr>':'[n')
 
-" version control
-xnoremap <expr> D (mode() ==# "V" ? ':Linediff<cr>' : 'D')
-
 " Blame:
 nnoremap <expr>   Ub  '@_<cmd>G blame '..(v:count?'--ignore-revs-file ""':'')..'<cr>'
 nnoremap <silent> 1Ub :.,G blame<bar>call feedkeys("\<lt>cr>")<cr>
