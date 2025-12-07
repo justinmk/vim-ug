@@ -1,4 +1,4 @@
-augroup config_fug
+augroup ug.plugin
   autocmd!
   autocmd FileType gitconfig setlocal commentstring=#\ %s
   " For the ":G log" buffer opened by the "UL" mapping.
