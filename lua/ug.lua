@@ -8,11 +8,17 @@ function M.ctrl_g()
   local oldmsg = vim.trim(fn.execute('norm! 2'..vim.keycode('<c-g>')))
   local mtime = isfile and fn.strftime('%Y-%m-%d %H:%M',fn.getftime(fn.expand('%:p'))) or ''
   table.insert(msg, { ('%s  %s\n'):format(oldmsg:sub(1), mtime) })
+
   -- Show git branch
   local gitref = 1 == fn.exists('*FugitiveHead') and fn['FugitiveHead'](7) or nil
-  if gitref then
+  if not gitref or gitref == '' then -- Not in a git buffer, try CWD.
+    local ok, rv = pcall(vim.system, { 'git', 'rev-parse', '--abbrev-ref', 'HEAD' })
+    gitref = ok and vim.trim(rv:wait().stdout)
+  end
+  if gitref and gitref ~= '' then
     table.insert(msg, { ('branch: %s\n'):format(gitref) })
   end
+
   -- Show current directory.
   table.insert(msg, { ('dir: %s\n'):format(fn.fnamemodify(fn.getcwd(), ':~')) })
   -- Show current session.
