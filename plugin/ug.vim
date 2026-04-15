@@ -55,9 +55,9 @@ nnoremap <expr>   Ur  '@_<cmd>Gread'.(v:count?(' @'.repeat('^',v:count).':%'):''
 nnoremap <silent> Us  :G<cr>
 nnoremap <silent> Uu  :Gedit <C-R><C-A><cr>
 nnoremap <silent> Uw  :call <sid>fug_detect()<bar>Gwrite<cr>
-nnoremap          Ux  :<c-u>try<bar>.GBrowse<bar>catch<bar>call feedkeys(':.GBrowse @')<bar>endtry<cr>
+"nnoremap         Ux  Defined in plugin/ug.lua
 xnoremap          Ux  :<c-u>try<bar>'<,'>GBrowse<bar>catch<bar>call feedkeys('gv:GBrowse @')<bar>endtry<cr>
-nnoremap          U.  :G  <c-r><c-w><bar>G s<home><right><right>
+nnoremap          U.  :G  <c-r><c-w><bar>G status<home><right><right>
 
 nmap UB Ub
 nmap 1UB 1Ub

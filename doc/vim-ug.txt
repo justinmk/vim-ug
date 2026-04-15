@@ -40,11 +40,20 @@ Um              Show the logs (Git history) for this Method/Function.
 Ur              Read the index version into the buffer.
 [count]Ur       Read the version [count] commits ago into the buffer.
 Us              Show Git status.
-Uu              ??
+Uu              `:Gedit` on <cWORD>
 Uw              `:Gwrite!<cr>`
-Ux              `:GBrowse`
+Ux              `:GBrowse
+[count]Ux       Opens the GitHub PR associated with the current branch.
 {visual}Ux      `:GBrowse` the selected range.
-U.              ??
+U.              Start a `:G` command followed by `:G status`.
+
+==============================================================================
+API                                                                   *ug-api*
+
+get_pr_url()    Tries to get the GitHub PR URL for the current branch,
+                assuming a git remote has a matching branch. Like a more
+                eager, and hopefully more useful, `gh pr view --web`.
+                Nvim only.
 
 ------------------------------------------------------------------------------
 vim:tw=78:ts=8:sw=4:et:ft=help:norl:
