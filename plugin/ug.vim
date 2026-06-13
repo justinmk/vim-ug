@@ -54,7 +54,8 @@ nnoremap          Um  :G log --pretty="%h%d %s  %aN (%cr)" --date=relative -L :<
 nnoremap <expr>   Ur  '@_<cmd>Gread'.(v:count?(' @'.repeat('^',v:count).':%'):'').'<cr>'
 nnoremap <silent> Us  :G<cr>
 nnoremap <silent> Uu  :Gedit <C-R><C-A><cr>
-nnoremap <silent> Uw  :call <sid>fug_detect()<bar>Gwrite<cr>
+" XXX: If :checktime prompts the user, Nvim doesn't give us a way to handle the response.
+nnoremap <silent> Uw  :call <sid>fug_detect()<bar>checktime %<bar>Gwrite<cr>
 "nnoremap         Ux  Defined in plugin/ug.lua
 xnoremap          Ux  :<c-u>try<bar>'<,'>GBrowse<bar>catch<bar>call feedkeys('gv:GBrowse @')<bar>endtry<cr>
 nnoremap          U.  :G  <c-r><c-w><bar>G status<home><right><right>
