@@ -3,7 +3,7 @@
 ==============================================================================
 vim-ug                                                                *vim-ug*
 
-Git wrapper rapper.
+Git rapper.
 
 Besides mappings, this plugin also:
 
@@ -29,6 +29,7 @@ Ud              Diff this buffer
 
 Ue              `:Gedit<cr>`
 Uf              Start a `:G commit --fixup=` command.
+Ug              `:Guh .` (see https://github.com/justinmk/guh.nvim)
 
 Ul              Show logs (Git history) for this file.
 9Ul             Show logs (Git history) for the current repo.

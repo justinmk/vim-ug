@@ -43,6 +43,7 @@ nnoremap <expr>   Ud  &diff ? ':diffupdate<cr>'
                   \     ..'<bar>else<bar>Gvdiffsplit '..(v:count ? ' HEAD'.repeat('^', v:count) : '')..'<bar>endif<cr>'
 nnoremap <silent> Ue  :Gedit<cr>
 nnoremap          Uf  :G commit --fixup=<c-r>=FugitiveExecute(['log', '-1', '--format=%h', '--', FugitivePath()]).stdout[0]<cr>
+nnoremap          Ug  :Guh .<cr>
 
 " Log:
 nnoremap <expr>   Ul  '@_<cmd>G log --pretty="%h%d %s  %aN (%cr)" --date=relative'.(v:count?'':' --follow -- %').'<cr>'
@@ -67,6 +68,7 @@ nmap UC Uc
 nmap UD Ud
 nmap UE Ue
 nmap UF Uf
+nmap UG Ug
 nmap UL Ul
 xmap UL Ul
 nmap 1UL 1Ul
